@@ -31,8 +31,7 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 
 streamlit.header('fruityvice fruit advice!')
 
-except URLError as e:
-  streamlit.error()
+
 
 
 
