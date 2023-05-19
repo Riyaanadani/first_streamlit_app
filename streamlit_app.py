@@ -49,6 +49,17 @@ fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 #output it the screen as a table 
 streamlit.dataframe(fruityvice_normalized)
 
+def insert_row_snowflake(new_fruit):
+    with my_cnx.cursor() as my_cur:
+        my_cur.execute("insert into fruit_load_list values ('" + new_fruit + "')")
+    return "Thanks for adding " + new_fruit
+
+# Adding fruits to the list
+insert_row_snowflake("jackfruit")
+insert_row_snowflake("papaya")
+insert_row_snowflake("guava")
+insert_row_snowflake("kiwi")
+
 
 
 
